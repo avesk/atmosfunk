@@ -20,6 +20,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('', include('tracks.urls')),
+    path('', include('atmosfunk_frontend.urls')),
     path('admin/', admin.site.urls),
 ]
 

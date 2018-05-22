@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tracks',
     'rest_framework',
+    'atmosfunk_frontend'
 ]
 
 MIDDLEWARE = [
