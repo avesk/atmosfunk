@@ -1,6 +1,6 @@
 # To run django app:
 
-# Create a Virtual environment with pipenv
+Create a Virtual environment with pipenv
 
 Run $pipenv shell
 
