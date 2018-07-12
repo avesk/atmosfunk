@@ -2,14 +2,14 @@
 
 # Create a Virtual environment with pipenv
 
-# Run $pipenv shell
+Run $pipenv shell
 
-# $cd project
+$cd project
 
-# run $python manage.py runserver
+run $python manage.py runserver
 
 # To run react app:
 
-# $cd project/atmosfunk_frontend
+$cd project/atmosfunk_frontend
 
-# run $npm run dev
+run $npm run dev
