@@ -5,7 +5,6 @@ class DataPoster extends Component {
 
     static propTypes = {
         endpoint: PropTypes.string.isRequired,
-        render: PropTypes.func.isRequired
     };
 
     state = {
@@ -21,9 +20,7 @@ class DataPoster extends Component {
         .then(response => {// JSON from `response.json()` call
             console.log(data);
         })
-        .catch(error => console.error(error));
-
-        .catch(error => console.error(error));
+        .catch(error => {console.error(error)});
     }
 
     post(url, data) {
@@ -45,4 +42,4 @@ class DataPoster extends Component {
 
 }
 
-export default DataProvider;
+export default DataPoster;
