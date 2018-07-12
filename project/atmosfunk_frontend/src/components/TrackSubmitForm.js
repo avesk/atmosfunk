@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Upload from 'rc-upload';
 
 class TrackSubmitForm extends Component {
     constructor(props) {
@@ -31,7 +30,7 @@ class TrackSubmitForm extends Component {
                     </label>
                     <label>
                         Track:
-                        <Upload accept="audio/*"/>
+                        <input type="file" accept="audio/*" value={this.state.trackFile} onChange={this.handleChange} />
                     </label>
                     <input type="submit" value="Submit" />
                 </form>
