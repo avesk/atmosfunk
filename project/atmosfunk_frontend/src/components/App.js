@@ -1,10 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import DataProvider from "./DataProvider"
-import Plane from "./Plane"
+import DataProvider from "./DataProvider";
+import Plane from "./Plane";
+import TrackSubmitForm from "./TrackSubmitForm";
 
 const App = () => (
     <React.Fragment>
+        <TrackSubmitForm />
         <DataProvider endpoint="/api/track"
             render={data => <Plane trackList={data} />}
         />

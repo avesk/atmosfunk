@@ -13,25 +13,14 @@ class Track extends Component {
         const source = this.props.source;
         const title = this.props.title;
         return(
-            <Draggable
-                axis="x"
-                handle=".handle"
-                defaultPosition={{x: 0, y: 0}}
-                position={null}
-                grid={[25, 25]}
-                onStart={this.handleStart}
-                onDrag={this.handleDrag}
-                onStop={this.handleStop}
-            >
-                <div className="track">
-                    <h3>{title}</h3>
-                    <ReactAudioPlayer
-                        src={source}
-                        autoPlay
-                        controls
-                    />
-                </div>
-            </Draggable>
+            <div className="track">
+                <h3>{title}</h3>
+                <ReactAudioPlayer
+                    src={source}
+                    autoPlay
+                    controls
+                />
+            </div>
         );
     }
 
