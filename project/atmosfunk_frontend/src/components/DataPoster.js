@@ -7,16 +7,23 @@ class DataPoster extends Component {
         endpoint: PropTypes.string.isRequired,
     };
 
-    state = {
-        data: [],
-        loaded: false,
-        placeholder: "Loading..."
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: [],
+            loaded: false,
+            placeholder: "Loading..."
+        }
     }
 
     componentDidMount() {
+        console.log('In Data Poster');
+
         var url = this.props.endpoint;
         var data = this.props.data;
-        post(url, data)
+        console.log(url);
+        console.log(data);
+        this.post(url, data)
         .then(response => {// JSON from `response.json()` call
             console.log(data);
         })

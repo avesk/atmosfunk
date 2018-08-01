@@ -4,13 +4,14 @@ import DataProvider from "./DataProvider";
 import Plane from "./Plane";
 import TrackSubmitForm from "./TrackSubmitForm";
 
-const endp = "/api/track";
+const endp = "/api/track/";
 const App = () => (
     <React.Fragment>
-        <TrackSubmitForm action={endp}/>
+        <TrackSubmitForm action={endp} />
         <DataProvider endpoint={endp}
             render={data => <Plane trackList={data} />}
         />
+
     </React.Fragment>
 );
 const wrapper = document.getElementById("app");
