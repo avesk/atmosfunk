@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import DataProvider from "./DataProvider";
 import Plane from "./Plane";
-import TrackSubmitForm from "./TrackSubmitForm";
+import TrackSubmitForm from "./TrackSubmit/TrackSubmitForm";
 
 const endp = "/api/track/";
 const App = () => (
