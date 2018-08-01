@@ -17,7 +17,6 @@ class Track extends Component {
                 <h3>{title}</h3>
                 <ReactAudioPlayer
                     src={source}
-                    autoPlay
                     controls
                 />
             </div>

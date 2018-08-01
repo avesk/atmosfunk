@@ -39,21 +39,12 @@ class TrackSubmitForm extends Component {
             console.log(response);
             // this.setState({uploadStatus: true });
         })
+        .then(() => {
+            this.props.trackSubmitted();
+        })
         .catch(function (error) {
             console.log(error);
         });
-    }
-
-    post(url, data) {
-        return fetch(url, {
-            method: 'POST', // or 'PUT'
-            body: JSON.stringify(data), // data can be `string` or {object}!
-            headers: new Headers({
-            'Content-Type': 'application/json'
-            })
-        })
-        .then(res => res.json())
-        .catch(error => console.error('Error:', error));
     }
 
     render() {
