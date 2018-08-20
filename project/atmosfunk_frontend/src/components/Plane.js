@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 import Track from './Track';
 import TrackSubmitForm from "./TrackSubmit/TrackSubmitForm";
 import { Sprite, Stage } from "react-pixi-fiber";
+import * as PIXI from 'pixi.js';
+
+// trying to get this shit to work
 import tyler from "../img/tyler.png";
 
 class Plane extends Component {
@@ -57,7 +60,7 @@ class Plane extends Component {
     }
 
 
-    tyler(props) {
+    Tyler(props) {
         return (
             <Sprite texture={PIXI.Texture.fromImage(tyler)} {...props} />
         );
@@ -66,13 +69,13 @@ class Plane extends Component {
     render() {
         var tracks = this.renderTracks();
         const endp = this.props.endpoint;
-        // var tyler = this.tyler();
 
         return(
             <div id="plane">
                 {tracks}
-                <Stage width={800} height={600} options={{ backgroundColor: 0x10bb99 }}>
-                    <this.tyler x={200} y={200} />
+                <img className="tyler" src={tyler} />
+                <Stage width={800} height={600} options={{ backgroundColor: 0x000000 }}>
+                    <Sprite texture={PIXI.Texture.fromImage(tyler)} x={200} y={200} />
                 </Stage>
             </div>
 
