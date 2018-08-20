@@ -11,28 +11,47 @@ class Plane extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {trackPlaying: null};
+    }
 
-        this.handleTrackSubmit = this.handleTrackSubmit.bind(this);
+    componentDidMount() {
+        this.preventMultiplePlayback();
+    }
+
+    /**
+     * code Used from
+     * https://stackoverflow.com/questions/19790506/multiple-audio-html-auto-stop-other-when-current-is-playing-with-javascript
+     */
+    preventMultiplePlayback() {
+        document.addEventListener('play', function(e){
+            var audios = document.getElementsByTagName('audio');
+            for(var i = 0, len = audios.length; i < len;i++){
+                if(audios[i] != e.target){
+                    audios[i].pause();
+                }
+            }
+        }, true);
+    }
+
+    updateTrackPlaying(track) {
+        this.setState({trackPlaying: track});
     }
 
     renderTracks() {
         var trackList = this.props.trackList;
+        var trackPlaying = this.state.trackPlaying;
         var tracks = trackList.map((track) =>
             <Track
                 key={track.id}
                 trackId={track.id}
                 source={track.trackFile}
                 title={track.title}
+                trackPlaying={trackPlaying}
             />
         );
         console.log(tracks);
 
         return tracks;
-    }
-
-    handleTrackSubmit() {
-
     }
 
     render() {
