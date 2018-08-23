@@ -5,7 +5,7 @@ import TrackSubmitForm from "./TrackSubmit/TrackSubmitForm";
 import { Sprite, Stage } from "react-pixi-fiber";
 import * as PIXI from 'pixi.js';
 
-// trying to get this shit to work
+// trying to get this shit to work https://blog.hellojs.org/importing-images-in-react-c76f0dfcb552
 import tyler from "../img/tyler.png";
 
 class Plane extends Component {

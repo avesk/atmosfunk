@@ -1,32 +1,18 @@
-module.exports = {
+const merge = require('webpack-merge');
+const parts = require('./webpack.parts');
+
+const common = {
     node: {
       fs: "empty"
     },
-    module: {
-        rules: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: {
-                  loader: "babel-loader",
-                },
-            },
-            {
-                test: /\.(jpg|png)$/,
-                use: {
-                    loader: "url-loader",
-                    options: {
-                      limit: 25000,
-                    },
-                },
-            },
-            {
-                test: /\.(png|jpg|gif)$/,
-                use: {
-                    loader: 'file-loader',
-                    options: {name: "./img/[hash].[ext]"}
-                }
-            }
-        ]
-    }
-};
+}
+
+const developmentConfig = merge([
+  parts.babelLoader(),
+  parts.loadImages(),
+]);
+
+module.exports = merge(
+    common,
+    developmentConfig
+);
